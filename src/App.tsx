@@ -1,18 +1,16 @@
 import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    // .main-container is the element Locomotive Scroll targets
     <div className="main-container" data-scroll-container>
       <NavBar />
+      <Hero />
 
-      {/* Placeholder page content */}
-      <div className="min-h-screen w-screen bg-blue-50 flex-center flex-col gap-6 px-10 text-center">
-        <h1 className="hero-heading text-blue-200">
-          ZE<b>N</b>TRY
-        </h1>
-        <p className="font-circular-web text-lg text-blue-200 max-w-xl">
-          The metagame layer for your cross-world identity.
+      {/* Placeholder for upcoming sections */}
+      <div className="min-h-screen w-screen bg-blue-50 flex-center">
+        <p className="font-circular-web text-blue-200 text-xl">
+          More sections coming soon...
         </p>
       </div>
     </div>
