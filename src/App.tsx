@@ -1,11 +1,13 @@
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
     <div className="main-container" data-scroll-container>
       <NavBar />
       <Hero />
+      <AboutUs />
 
       {/* Placeholder for upcoming sections */}
       <div className="min-h-screen w-screen bg-blue-50 flex-center">
