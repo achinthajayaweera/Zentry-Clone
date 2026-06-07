@@ -1,47 +1,41 @@
-import { useLayoutEffect, useState } from "react";
+"use client";
+import { useEffect, useLayoutEffect, useState } from "react";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import LocomotiveScroll from "locomotive-scroll";
-
 const useLocoScroll = () => {
   gsap.registerPlugin(ScrollTrigger);
-
   const [locoScroll, setLocoScroll] = useState<LocomotiveScroll | null>(null);
   const [progress, setProgress] = useState(0);
-
   useLayoutEffect(() => {
-    // Grab the main scrollable container from the DOM
+    //importing locomotive scroll
+    //getting the scroller element from the dom
     const scrollEl: HTMLElement | null = document.querySelector(".main-container");
     if (!scrollEl) return;
-
-    // Initialize Locomotive Scroll with smooth scrolling enabled
+    //initializing the locomotive scroll instance giving it the element and smooth true and other props and options
     const locoScrollInstance = new LocomotiveScroll({
       el: scrollEl,
       smooth: true,
       multiplier: 1.5,
-      // @ts-ignore — mobile smooth scroll (unofficial option)
+      //@ts-ignore
       mobile: {
         smooth: true,
       },
     });
-
     setLocoScroll(locoScrollInstance);
 
-    // Keep GSAP ScrollTrigger in sync with Locomotive Scroll position
+    // every time the locomotive scroll updates (scrolls) we want the scrolltrigger from gsap to update
+    //this is like sync the positioning of the two
     locoScrollInstance.on("scroll", ScrollTrigger.update);
     locoScrollInstance.on("scroll", (args) => setProgress(args.scroll.y));
+    //
 
-    // Proxy the scroll container so ScrollTrigger reads Locomotive's values
     ScrollTrigger.scrollerProxy(scrollEl, {
       scrollTop(value) {
-        return arguments.length
-          ? locoScrollInstance.scrollTo(value, 0)
-          : locoScrollInstance.scroll.instance.scroll.y;
+        return arguments.length ? locoScrollInstance.scrollTo(value, 0) : locoScrollInstance.scroll.instance.scroll.y;
       },
       scrollLeft(value) {
-        return arguments.length
-          ? locoScrollInstance.scrollTo(value, 0)
-          : locoScrollInstance.scroll.instance.scroll.x;
+        return arguments.length ? locoScrollInstance.scrollTo(value, 0) : locoScrollInstance.scroll.instance.scroll.x;
       },
       getBoundingClientRect() {
         return {
@@ -54,16 +48,16 @@ const useLocoScroll = () => {
       pinType: scrollEl?.style.transform ? "transform" : "fixed",
     });
 
-    // Refresh ScrollTrigger whenever Locomotive updates layout
     const lsUpdate = () => locoScrollInstance.update();
+
     ScrollTrigger.addEventListener("refresh", lsUpdate);
     ScrollTrigger.refresh();
 
-    // Cleanup on unmount
+    // Cleanup on component unmount
     return () => {
       if (locoScrollInstance) {
         ScrollTrigger.removeEventListener("refresh", lsUpdate);
-        locoScrollInstance.destroy();
+        locoScrollInstance.destroy(); // Destroy Locomotive Scroll instance
       }
     };
   }, []);
