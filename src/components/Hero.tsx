@@ -44,9 +44,19 @@ const Hero = () => {
   
   const getVideoSrc = (index: number) => `/videos/hero-${index}.mp4`;
   const handleVideoLoad = () => setLoadedVideos((prev) => prev + 1);
+
   useEffect(() => {
     if (loadedVideos === totalVideos - 1) setIsLoading(false);
   }, [loadedVideos]);
+
+  // Fallback: dismiss loader after 4s even if videos are blocked by browser
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, []);
+
   useGSAP(
     () => {
       if (hasClicked) gsap.from(backgroundVideoRef.current, { autoAlpha: 0, duration: 2 }).duration(2);
