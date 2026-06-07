@@ -1,6 +1,7 @@
 import NavBar from "./components/NavBar";
 import Hero from "./components/Hero";
 import AboutUs from "./components/AboutUs";
+import Features from "./components/Features";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <NavBar />
       <Hero />
       <AboutUs />
+      <Features />
 
       {/* Placeholder for upcoming sections */}
       <div className="min-h-screen w-screen bg-blue-50 flex-center">
