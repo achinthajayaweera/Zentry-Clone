@@ -81,7 +81,7 @@ const Story = () => {
           <div className=" w-full imgtilt story-img-container  h-[90vh] md:h-dvh relative">
             <div className=" story-img-mask">
               <div className="story-img-content">
-                <img ref={frameRef} src="/img/entrance.webp" alt="entrance.webp" className="object-contain" />
+                <img ref={frameRef} src={`${import.meta.env.BASE_URL}img/entrance.webp" alt="entrance.webp" className="object-contain" />
               </div>
             </div>
             <RoundedCorners />

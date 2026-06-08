@@ -64,7 +64,7 @@ const AboutUs = () => {
               className=" absolute rounded-3xl overflow-hidden left-1/2 top-0 z-20 border border-black mask-clip-path2 origin-center
          -translate-x-1/2  w-[30vw] h-96"
             >
-              <img src="/img/about.webp" className=" absolute inset-0 size-full object-cover" alt="" />
+              <img src={`${import.meta.env.BASE_URL}img/about.webp" className=" absolute inset-0 size-full object-cover" alt="" />
             </div>{" "}
             <div className=" about-subtext">
               <p className=" capitalize">The Game of Games begins—your life, now an epic MMORPG</p>

@@ -51,9 +51,9 @@ const Pinned = () => {
           onEnter: () => {
             EnteryAnimation.play();
             if (i > 0) {
-              videoRef.current?.setAttribute("src", "/videos/v2.webm");
+              videoRef.current?.setAttribute("src", `${import.meta.env.BASE_URL}videos/v2.webm");
             } else {
-              videoRef.current?.setAttribute("src", "/videos/v1.webm");
+              videoRef.current?.setAttribute("src", `${import.meta.env.BASE_URL}videos/v1.webm");
             }
           },
           onLeave: () => EnteryAnimation.reverse(),
@@ -90,7 +90,7 @@ POWERED BY ZE<b>N</b>T"
             <Button id="vault" title="ENTER VAULT" containerClass="!bg-black !px-8 !text-white" />
           </div>
           <div className=" size-52 md:size-96 lg:absolute mx-auto lg:right-10 bottom-10 z-30">
-            <video ref={videoRef} loop muted autoPlay src="/videos/v3.webm" />
+            <video ref={videoRef} loop muted autoPlay src={`${import.meta.env.BASE_URL}videos/v3.webm" />
           </div>
           <div className="flex  lg:mt-0 mt-40 flex-col pl-8 items-start ">
             <PaginationScroll

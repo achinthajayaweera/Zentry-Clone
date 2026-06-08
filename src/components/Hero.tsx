@@ -42,7 +42,7 @@ const Hero = () => {
     });
   }
   
-  const getVideoSrc = (index: number) => `/videos/hero-${index}.mp4`;
+  const getVideoSrc = (index: number) => `${import.meta.env.BASE_URL}videos/hero-${index}.mp4`;
   const handleVideoLoad = () => setLoadedVideos((prev) => prev + 1);
 
   useEffect(() => {
