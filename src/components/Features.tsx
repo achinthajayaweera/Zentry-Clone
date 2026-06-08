@@ -13,7 +13,7 @@ const Features = () => {
           </p>
         </div>
         <BentoCard
-          src={`${import.meta.env.BASE_URL}videos/feature-1.mp4"
+          src={`${import.meta.env.BASE_URL}videos/feature-1.mp4`}
           title={
             <>
               radi<b>n</b>t
@@ -30,7 +30,7 @@ const Features = () => {
           col-span-2 overflow-hidden transition-transform duration-300 ease-out row-span-1 md:col-span-1 md:row-span-2"
           >
             <BentoCard
-              src={`${import.meta.env.BASE_URL}videos/feature-2.mp4"
+              src={`${import.meta.env.BASE_URL}videos/feature-2.mp4`}
               title={
                 <>
                   zig<b>m</b>a
@@ -44,7 +44,7 @@ const Features = () => {
           col-span-2  transition-transform duration-300 ease-out md:col-span-1 row-span-1"
           >
             <BentoCard
-              src={`${import.meta.env.BASE_URL}videos/feature-3.mp4"
+              src={`${import.meta.env.BASE_URL}videos/feature-3.mp4`}
               title={
                 <>
                   n<b>e</b>xus
@@ -58,7 +58,7 @@ const Features = () => {
           col-span-2  transition-transform duration-300 ease-out md:col-span-1 "
           >
             <BentoCard
-              src={`${import.meta.env.BASE_URL}videos/feature-4.mp4"
+              src={`${import.meta.env.BASE_URL}videos/feature-4.mp4`}
               title={
                 <>
                   az<b>u</b>l
@@ -76,7 +76,7 @@ const Features = () => {
             </div>
           </BentoTilt>
           <BentoTilt className=" bento-tilt_2">
-            <video className=" size-full object-cover object-center" src={`${import.meta.env.BASE_URL}videos/feature-5.mp4" loop autoPlay muted />
+            <video className=" size-full object-cover object-center" src={`${import.meta.env.BASE_URL}videos/feature-5.mp4`} loop autoPlay muted />
           </BentoTilt>
         </div>
       </div>

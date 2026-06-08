@@ -48,7 +48,7 @@ const NavBar = () => {
       <header className=" absolute top-1/2 w-full  -translate-y-1/2">
         <nav className=" flex size-full items-center justify-between p-4">
           <div className="flex items-center gap-7">
-            <img src={`${import.meta.env.BASE_URL}img/logo.png" alt="logo" className=" w-10" />
+            <img src={`${import.meta.env.BASE_URL}img/logo.png`} alt="logo" className=" w-10" />
             <Button
               id="product-btn"
               title="products"
@@ -69,7 +69,7 @@ const NavBar = () => {
               ))}
             </div>
             <button onClick={toggleAudio} className=" ml-10 p-1 flex items-center space-x-0.5">
-              <audio ref={audioElementRef} src={`${import.meta.env.BASE_URL}audio/loop.mp3" loop className=" hidden" />
+              <audio ref={audioElementRef} src={`${import.meta.env.BASE_URL}audio/loop.mp3`} loop className=" hidden" />
               {[1, 2, 3, 4].map((index) => (
                 <div
                   style={{ animationDelay: `${index * 0.1}s` }}
